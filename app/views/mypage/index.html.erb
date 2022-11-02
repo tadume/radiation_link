@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Articles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mypages.each do |mypage| %>
+      <tr>
+        <td><%= mypage.title %></td>
+        <td><%= mypage.content %></td>
+
+        <td><%= link_to "Show", mypage %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
