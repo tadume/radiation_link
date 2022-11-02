@@ -22,11 +22,31 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def set_article
-    @article = current_user.articles.find(params[:id])
+  def edit
   end
 
-  def article_params
-    params.require(:article).permit(:title, :content)
+  def update
+    if @article.update(article_params)
+      redirect_to mypage_path, notice: "記事が更新されました"
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
+
+  def destroy
+    if @article.destroy
+      redirect_to mypage_path, notice: "記事が削除されました"
+    end
+  end
+
+
+
+  private
+    def set_article
+      @article = current_user.articles.find(params[:id])
+    end
+
+    def article_params
+      params.require(:article).permit(:title, :content)
+    end
 end
