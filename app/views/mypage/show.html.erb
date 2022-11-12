@@ -8,7 +8,6 @@
   <thead>
     <tr>
       <th>タイトル</th>
-      <th>本文</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,8 +15,12 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
-        <td><%= article.title %></td>
-        <td><%= article.content %></td>
+        <td>
+        <%= article.title %>
+        <% article.tags.each do |tag| %>
+          <span class="badge rounded-pill bg-primary"><%= tag.name%></span>
+        <% end %>
+        </td>
 
         <td><%= link_to "Show", article %></td>
       </tr>

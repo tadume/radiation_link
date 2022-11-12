@@ -6,6 +6,13 @@
 </p>
 
 <p>
+  <strong>タグ：</strong>
+  <% @article.tags.each do |tag| %>
+    <span class="badge rounded-pill bg-primary"><%= tag.name%></span>
+  <% end %>
+</p>
+
+<p>
   <strong>本文：</strong>
   <%= @article.content %>
 </p>
