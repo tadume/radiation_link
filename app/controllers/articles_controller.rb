@@ -2,7 +2,8 @@ class ArticlesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[ index show ]
   before_action :set_article, only: %i[ edit update destroy ]
   def index
-    @articles = Article.order(updated_at: :desc).page(params[:page]).per(1)
+    articles = Article.where("title LIKE ?", "%#{params[:title]}%")
+    @articles = articles.order(updated_at: :desc).page(params[:page]).per(1)
   end
 
   def show

@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h1>自分の記事</h1>
+<%= paginate @articles %>
+<%= render partial: "search" %>
 
 <table>
   <thead>
