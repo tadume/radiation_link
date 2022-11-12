@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>自分の記事</h1>
+<%= link_to "ユーザー一覧", users_path %>
 <%= paginate @articles %>
 <%= render partial: "search" %>
 
