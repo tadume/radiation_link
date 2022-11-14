@@ -21,18 +21,23 @@
   <strong>コメント</strong>
   <% @comments.each do |comment| %>
     <%= comment.content %>
+    <% if current_user&.id == comment.user_id %>
+      <%= link_to "コメントを削除する", comment_path(comment.id), method: :delete, data: { confirm: "削除しますか？" } %>
+    <% end %>
   <% end %>
 </p>
 
-<%= form_with(model: @comment, local: true) do |f| %>
-  <%= f.text_area :content %>
-  <%= f.hidden_field :article_id, value: @article.id %>
-  <%= f.submit 'コメントする' %>
-<% end %>
+  <%= form_with(model: @comment, local: true) do |f| %>
+    <%= f.text_area :content %>
+    <%= f.hidden_field :article_id, value: @article.id %>
+    <%= f.submit 'コメントする' %>
+  <% end %>
+
 
 <% if current_user&.id == @article.user_id %>
+
   <%= link_to '編集', edit_article_path(@article) %>
-  <%= link_to '削除', @article, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to '削除', @article, method: :delete, data: { confirm: "削除しますか？" } %>
   <%= link_to 'マイページに戻る', mypage_path %>
   <%= link_to '記事一覧に戻る', articles_path %>
 
