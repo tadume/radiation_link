@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   get 'users/index'
   devise_for :users
-  resources :articles
+  resources :articles do
+    resources :favorites, only: [:create, :destroy]
+  end
   root to: "articles#index"
   get "/mypage", to: "mypage#show"
   resources :comments, only: [:create, :destroy]

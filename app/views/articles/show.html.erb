@@ -44,3 +44,14 @@
 <% else %>
   <%= link_to '記事一覧に戻る', articles_path %>
 <% end %>
+
+
+<% if @article.favorited?(current_user) %>
+    <%= link_to article_favorite_path(@article.id), method: :delete do %>
+        <span style="color:red;">❤︎</span>
+    <% end %>
+<% else %>
+    <%= link_to article_favorites_path(@article.id), method: :post do %>
+        <span>❤︎</span>
+    <% end %>
+<% end %>

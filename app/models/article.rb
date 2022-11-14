@@ -8,4 +8,10 @@ class Article < ApplicationRecord
   has_many :tags, through: :tag_articles
 
   has_many :comments, dependent: :destroy
+
+  has_many :favorites, dependent: :destroy
+
+  def favorited?(user)
+    favorites.where(user_id: user.id).exists?
+  end
 end
