@@ -1,24 +1,15 @@
-# README
+Radiation Link は放射線技師と放射線技師が気軽にメッセージを送り合えるサービスです。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 主な機能
+- 記事の投稿機能
+- ユーザー登録機能
+- タグ（選択式）の投稿機能
+- 記事へのいいね機能
+- 記事一覧・ユーザー一覧でのページネーション機能
 
-Things you may want to cover:
+# 技術
+- Rails6.0.3.7
+- Ruby2.7.2
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# 工夫
+- GitHunでissue管理を行った
