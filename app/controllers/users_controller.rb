@@ -4,4 +4,8 @@ class UsersController < ApplicationController
     users = User.where("name LIKE ?", "%#{ params[:name] }%")
     @users = users.order(updated_at: :desc).page(params[:page]).per(1)
   end
+
+  def show
+    @user = User.find(params[:id])
+  end
 end
