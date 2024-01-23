@@ -1,13 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { ChakraProvider } from '@chakra-ui/react';
-import thema from './thema/thema';
+import thema from './theme/theme';
+import { BrowserRouter } from 'react-router-dom';
+
+import { Router } from './router/Router';
 
 function App() {
   return (
     <ChakraProvider theme={thema}>
-      <div>hello world</div>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
     </ChakraProvider>
   );
 }
