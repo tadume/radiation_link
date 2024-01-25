@@ -9,7 +9,7 @@ export const Router = memo(() => {
   return (
     <Routes>
       {ArticleRoutes.map((url) => (
-        <Route path="/articles">
+        <Route key={url.path} path="/articles">
           <Route
             path={url.path}
             element={<HeaderLayout>{url.children}</HeaderLayout>}
