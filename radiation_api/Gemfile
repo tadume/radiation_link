@@ -43,6 +43,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "rubocop-rails"
   gem "rubocop-rspec"
+  gem "rack-cors"
 end
 
 group :development do
