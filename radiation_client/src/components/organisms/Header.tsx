@@ -26,7 +26,7 @@ export const Header: FC = memo(() => {
           onClick={onClickArticles}
         >
           <Heading as="h1" fontSize={{ base: 'md', md: 'lg' }}>
-            ユーザ管理アプリ
+            Radiation Link
           </Heading>
         </Flex>
         <Flex
