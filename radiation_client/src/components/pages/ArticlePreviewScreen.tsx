@@ -13,14 +13,14 @@ export const ArticlePreviewScreen: FC = memo(() => {
           <Spinner />
         </Center>
       ) : (
-        <Stack pt={5} spacing={4}>
+        <Stack spacing={4}>
           {articles.map((data) => (
             <ArticleCard
               key={data.id}
               name={data.user.name}
-              article_id={data.id}
+              articleId={data.id}
               title={data.title}
-              updated_at={data.updated_at}
+              updatedAt={data.updated_at}
             />
           ))}
         </Stack>

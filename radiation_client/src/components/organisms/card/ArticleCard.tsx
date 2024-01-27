@@ -11,18 +11,21 @@ import { FC, memo } from 'react';
 import { Tag } from '../../atoms/Tag';
 import { HartIcon } from '../../atoms/icon/HartIcon';
 import { SaveIcon } from '../../atoms/icon/SaveIcon';
+import { useNavigate } from 'react-router-dom';
 
 type Props = {
   name: string;
-  article_id: number;
+  articleId: number;
   title: string;
-  updated_at: Date;
+  updatedAt: string;
 };
 
 const tags: Array<string> = ['JavaScript', 'TypeScript'];
 
 export const ArticleCard: FC<Props> = memo((props) => {
-  const { name, article_id, title, updated_at } = props;
+  const { name, articleId, title, updatedAt } = props;
+  const navigate = useNavigate();
+  const numOfGoods = 12;
   return (
     <Box
       mx="auto"
@@ -34,6 +37,7 @@ export const ArticleCard: FC<Props> = memo((props) => {
       justifyContent="center"
       p={5}
       _hover={{ cursor: 'pointer' }}
+      onClick={() => navigate(`/articles/${articleId}`)}
     >
       <Stack>
         <Flex textAlign="center">
@@ -45,7 +49,7 @@ export const ArticleCard: FC<Props> = memo((props) => {
           <Box textAlign="left" pl={2}>
             <Text fontSize="sm">{name}</Text>
             <Text fontSize="xs" color="gray.500">
-              {updated_at.toString()}
+              {updatedAt.toString()}
             </Text>
           </Box>
         </Flex>
@@ -61,8 +65,9 @@ export const ArticleCard: FC<Props> = memo((props) => {
                 </WrapItem>
               ))}
             </Wrap>
-            <Flex textAlign="center">
-              <HartIcon numOfGood={12} />
+            <Flex textAlign="center" alignItems="center">
+              <HartIcon iconSize={4} view="0 0 35 35" height={6} width={6} />
+              <Text fontSize="sm">{numOfGoods}</Text>
             </Flex>
           </Box>
           <SaveIcon />

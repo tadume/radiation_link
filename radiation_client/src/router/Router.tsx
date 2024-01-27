@@ -8,14 +8,16 @@ import { HeaderLayout } from '../components/templates/HeaderLayout';
 export const Router = memo(() => {
   return (
     <Routes>
-      {ArticleRoutes.map((url) => (
-        <Route key={url.path} path="/articles">
+      <Route path="/articles">
+        {ArticleRoutes.map((url) => (
           <Route
+            key={url.path}
             path={url.path}
             element={<HeaderLayout>{url.children}</HeaderLayout>}
           />
-        </Route>
-      ))}
+        ))}
+      </Route>
+
       <Route
         path="*"
         element={
