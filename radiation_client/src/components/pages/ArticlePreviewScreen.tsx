@@ -1,6 +1,6 @@
 import { Center, Spinner, Stack } from '@chakra-ui/react';
 import { FC, memo, useEffect } from 'react';
-import { ArticleCard } from '../organisms/card/ArticleCard';
+import { ArticlePreviewCard } from '../organisms/card/ArticlePreviewCard';
 import { useGetArticles } from '../../hooks/api/articles/useGetArticles';
 
 export const ArticlePreviewScreen: FC = memo(() => {
@@ -15,7 +15,7 @@ export const ArticlePreviewScreen: FC = memo(() => {
       ) : (
         <Stack spacing={4}>
           {articles.map((data) => (
-            <ArticleCard
+            <ArticlePreviewCard
               key={data.id}
               name={data.user.name}
               articleId={data.id}

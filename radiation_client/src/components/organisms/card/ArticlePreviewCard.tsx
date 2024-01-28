@@ -22,7 +22,7 @@ type Props = {
 
 const tags: Array<string> = ['JavaScript', 'TypeScript'];
 
-export const ArticleCard: FC<Props> = memo((props) => {
+export const ArticlePreviewCard: FC<Props> = memo((props) => {
   const { name, articleId, title, updatedAt } = props;
   const navigate = useNavigate();
   const numOfGoods = 12;
@@ -70,7 +70,7 @@ export const ArticleCard: FC<Props> = memo((props) => {
               <Text fontSize="sm">{numOfGoods}</Text>
             </Flex>
           </Box>
-          <SaveIcon />
+          <SaveIcon width={10} height={10} view="0 0 32 32" iconSize={8} />
         </Flex>
       </Stack>
     </Box>
