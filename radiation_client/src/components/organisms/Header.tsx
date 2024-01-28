@@ -18,6 +18,7 @@ export const Header: FC = memo(() => {
         align="center"
         justify="space-between"
         padding={{ base: 3, md: 5 }}
+        mb="32px"
       >
         <Flex
           as="a"

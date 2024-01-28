@@ -13,7 +13,10 @@ export const useGetArticles = () => {
     setLoading(true);
     axios
       .get<Array<ArticleType>>("http://localhost:3001/api/v1/articles")
-      .then((res) => setArticles(res.data))
+      .then((res) => {
+        setArticles(res.data);
+        console.log(res.data);
+      })
       .catch((error) => {
         showMessage({ title: "記事の取得に失敗しました", status: "error" });
       })

@@ -1,0 +1,17 @@
+current directory: /Users/tadume_daichi/git/radiation_link/vendor/bundle/ruby/3.1.0/gems/stringio-3.1.0/ext/stringio
+/Users/tadume_daichi/.rbenv/versions/3.1.3/bin/ruby -I /Users/tadume_daichi/.rbenv/versions/3.1.3/lib/ruby/3.1.0 extconf.rb
+creating Makefile
+
+current directory: /Users/tadume_daichi/git/radiation_link/vendor/bundle/ruby/3.1.0/gems/stringio-3.1.0/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20240128-11954-vbldgp sitelibdir\=./.gem.20240128-11954-vbldgp clean
+
+current directory: /Users/tadume_daichi/git/radiation_link/vendor/bundle/ruby/3.1.0/gems/stringio-3.1.0/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20240128-11954-vbldgp sitelibdir\=./.gem.20240128-11954-vbldgp
+compiling stringio.c
+linking shared-object stringio.bundle
+ld: warning: -multiply_defined is obsolete
+ld: warning: ignoring duplicate libraries: '-lruby.3.1'
+
+current directory: /Users/tadume_daichi/git/radiation_link/vendor/bundle/ruby/3.1.0/gems/stringio-3.1.0/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20240128-11954-vbldgp sitelibdir\=./.gem.20240128-11954-vbldgp install
+/usr/bin/install -c -m 0755 stringio.bundle ./.gem.20240128-11954-vbldgp
