@@ -12,14 +12,12 @@ export const useShowArticle = (articleId: string | undefined) => {
       .get<ArticleType>(`http://localhost:3001/api/v1/articles/${articleId}`)
       .then((res) => {
         setArticle(res.data);
-        console.log(res.data);
       })
       .catch((error) => {
         showMessage({
           title: "記事が取得できませんでした。",
           status: "error",
         });
-        console.log(error);
       });
   }, [setArticle]);
 
