@@ -1,5 +1,5 @@
-import { Icon, Text } from '@chakra-ui/react';
-import { FC, memo } from 'react';
+import { Icon } from "@chakra-ui/react";
+import { FC, memo } from "react";
 
 type Props = {
   iconSize: number;

@@ -4,9 +4,9 @@ import {
   DrawerBody,
   DrawerContent,
   DrawerOverlay,
-} from '@chakra-ui/react';
-import { FC, memo } from 'react';
-import { useScreenTransition } from '../../hooks/useScreenTransition';
+} from "@chakra-ui/react";
+import { FC, memo } from "react";
+import { useScreenTransition } from "../../hooks/useScreenTransition";
 
 type Props = {
   onClose: () => void;
@@ -15,7 +15,7 @@ type Props = {
 
 export const MenuDrawer: FC<Props> = memo((props) => {
   const { onClose, isOpen } = props;
-  const { onClickArticles, onClickSetting, onClickUsers } =
+  const { onClickArticles, onClickSetting, onClickUsers, onClickNew } =
     useScreenTransition();
   return (
     <Drawer placement="left" size="xs" onClose={onClose} isOpen={isOpen}>
@@ -30,6 +30,9 @@ export const MenuDrawer: FC<Props> = memo((props) => {
             </Button>
             <Button w="100%" onClick={onClickSetting}>
               設定
+            </Button>
+            <Button w="100%" onClick={onClickNew}>
+              投稿する
             </Button>
           </DrawerBody>
         </DrawerContent>

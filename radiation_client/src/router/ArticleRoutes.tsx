@@ -1,25 +1,25 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 
-import { ArticlePreviewScreen } from '../components/pages/ArticlePreviewScreen';
-import { ArticleDetailScreen } from '../components/pages/ArticleDetailScreen';
-import { ArticleEditScreen } from '../components/pages/ArticleEditScreen';
-import { Page404 } from '../components/pages/Page404';
+import { ArticlePreviewScreen } from "../components/pages/ArticlePreviewScreen";
+import { ArticleDetailScreen } from "../components/pages/ArticleDetailScreen";
+import { Page404 } from "../components/pages/Page404";
+import { MDEditor } from "../components/pages/MDEditor";
 
 export const ArticleRoutes: Array<{ path: string; children: ReactNode }> = [
   {
-    path: '',
+    path: "",
     children: <ArticlePreviewScreen />,
   },
   {
-    path: ':id',
+    path: ":id",
     children: <ArticleDetailScreen />,
   },
   {
-    path: 'edit',
-    children: <ArticleEditScreen />,
+    path: "new",
+    children: <MDEditor />,
   },
   {
-    path: '*',
+    path: "*",
     children: <Page404 />,
   },
 ];

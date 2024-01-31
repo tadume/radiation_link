@@ -1,14 +1,15 @@
-import { Box, Flex, Heading, Link, useDisclosure } from '@chakra-ui/react';
-import { FC, memo } from 'react';
+import { Flex, Heading, Icon, useDisclosure } from "@chakra-ui/react";
+import { FC, memo } from "react";
 
-import { useScreenTransition } from '../../hooks/useScreenTransition';
-import { MenuIconButton } from '../atoms/button/MenuIconButton';
-import { MenuDrawer } from '../molecules/MenuDrawer';
+import { useScreenTransition } from "../../hooks/useScreenTransition";
+import { MenuIconButton } from "../atoms/button/MenuIconButton";
+import { MenuDrawer } from "../molecules/MenuDrawer";
+import { PrimaryButton } from "../atoms/button/PrimaryButton";
+import { AtSignIcon } from "@chakra-ui/icons";
 
 export const Header: FC = memo(() => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { onClickArticles, onClickSetting, onClickUsers } =
-    useScreenTransition();
+  const { onClickArticles, onClickNew } = useScreenTransition();
   return (
     <>
       <Flex
@@ -22,24 +23,17 @@ export const Header: FC = memo(() => {
       >
         <Flex
           as="a"
-          _hover={{ cursor: 'pointer' }}
+          _hover={{ cursor: "pointer" }}
           mr={8}
           onClick={onClickArticles}
         >
-          <Heading as="h1" fontSize={{ base: 'md', md: 'lg' }}>
+          <Heading as="h1" fontSize={{ base: "md", md: "lg" }}>
             Radiation Link
           </Heading>
         </Flex>
-        <Flex
-          align="center"
-          flexGrow={2}
-          display={{ base: 'none', md: 'flex' }}
-          fontSize="sm"
-        >
-          <Box pr={4}>
-            <Link onClick={onClickUsers}>ユーザ一覧</Link>
-          </Box>
-          <Link onClick={onClickSetting}>設定</Link>
+        <Flex align="center" display={{ base: "none", md: "flex" }}>
+          <Icon as={AtSignIcon} boxSize={7} mr={5} />
+          <PrimaryButton onClick={onClickNew}>投稿する</PrimaryButton>
         </Flex>
         <MenuIconButton onOpen={onOpen} />
       </Flex>
