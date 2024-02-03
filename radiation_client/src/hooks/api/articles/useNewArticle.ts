@@ -3,10 +3,10 @@ import { useCallback, useContext } from "react";
 import { ArticleType } from "../../../types/api/ArticleType";
 import { useToastMessage } from "../../useToastMessage";
 import { ArticleContext } from "../../../providers/ArticleProvider";
-import { useNavigate } from "react-router-dom";
+import { useScreenTransition } from "../../useScreenTransition";
 
 export const useNewArticle = () => {
-  const navigate = useNavigate();
+  const { onClickArticles } = useScreenTransition();
 
   const { title, body, setTitle, setBody } = useContext(ArticleContext);
   const { showMessage } = useToastMessage();
@@ -20,7 +20,7 @@ export const useNewArticle = () => {
       .then((res) => {
         console.log(res); // レスポンスデータを利用するかは考え中
         showMessage({ title: "記事が投稿されました！", status: "success" });
-        navigate("/articles");
+        onClickArticles();
       })
       .catch((error) => {
         console.log(error);

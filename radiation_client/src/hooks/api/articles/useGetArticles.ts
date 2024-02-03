@@ -21,6 +21,6 @@ export const useGetArticles = () => {
         showMessage({ title: "記事の取得に失敗しました", status: "error" });
       })
       .finally(() => setLoading(false));
-  }, [setArticles]);
+  }, []);
   return { getArticles, articles, loading };
 };

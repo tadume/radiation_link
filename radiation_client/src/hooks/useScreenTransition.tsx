@@ -8,6 +8,16 @@ export const useScreenTransition = () => {
   const onClickUsers = useCallback(() => navigate("/users"), []);
   const onClickSetting = useCallback(() => navigate("/setting"), []);
   const onClickNew = useCallback(() => navigate("/articles/new"), []);
+  const onSelectArticle = useCallback(
+    (articleId: number) => navigate(`/articles/${articleId}`),
+    []
+  );
 
-  return { onClickArticles, onClickUsers, onClickSetting, onClickNew };
+  return {
+    onClickArticles,
+    onClickUsers,
+    onClickSetting,
+    onClickNew,
+    onSelectArticle,
+  };
 };

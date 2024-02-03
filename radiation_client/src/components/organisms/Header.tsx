@@ -21,13 +21,12 @@ export const Header: FC = memo(() => {
         padding={{ base: 3, md: 5 }}
         mb="32px"
       >
-        <Flex
-          as="a"
-          _hover={{ cursor: "pointer" }}
-          mr={8}
-          onClick={onClickArticles}
-        >
-          <Heading as="h1" fontSize={{ base: "md", md: "lg" }}>
+        <Flex as="a" _hover={{ cursor: "pointer" }} mr={8}>
+          <Heading
+            as="h1"
+            fontSize={{ base: "md", md: "lg" }}
+            onClick={onClickArticles}
+          >
             Radiation Link
           </Heading>
         </Flex>
