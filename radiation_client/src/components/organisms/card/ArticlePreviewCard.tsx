@@ -6,46 +6,42 @@ import {
   Text,
   Wrap,
   WrapItem,
-} from '@chakra-ui/react';
-import { FC, memo } from 'react';
-import { Tag } from '../../atoms/Tag';
-import { HartIcon } from '../../atoms/icon/HartIcon';
-import { SaveIcon } from '../../atoms/icon/SaveIcon';
-import { useNavigate } from 'react-router-dom';
+} from "@chakra-ui/react";
+import { FC, memo } from "react";
+import { Tag } from "../../atoms/Tag";
+import { HartIcon } from "../../atoms/icon/HartIcon";
+import { SaveIcon } from "../../atoms/icon/SaveIcon";
 
 type Props = {
   name: string;
   articleId: number;
   title: string;
   updatedAt: string;
+  img: string | null;
+  onClick: (articleId: number) => void;
 };
 
-const tags: Array<string> = ['JavaScript', 'TypeScript'];
+const tags: Array<string> = ["JavaScript", "TypeScript"];
 
 export const ArticlePreviewCard: FC<Props> = memo((props) => {
-  const { name, articleId, title, updatedAt } = props;
-  const navigate = useNavigate();
+  const { name, articleId, title, updatedAt, onClick, img } = props;
   const numOfGoods = 12;
   return (
     <Box
       mx="auto"
-      w={{ base: 'full', md: '599px' }}
+      w={{ base: "full", md: "599px" }}
       minH="164px"
       bg="white"
       borderRadius={8}
       shadow="md"
       justifyContent="center"
       p={5}
-      _hover={{ cursor: 'pointer' }}
-      onClick={() => navigate(`/articles/${articleId}`)}
+      _hover={{ cursor: "pointer" }}
+      onClick={() => onClick(articleId)}
     >
       <Stack>
         <Flex textAlign="center">
-          <Image
-            src="https://source.unsplash.com/random"
-            boxSize="32px"
-            borderRadius="full"
-          />
+          <Image src={img ? img : "none"} boxSize="32px" borderRadius="full" />
           <Box textAlign="left" pl={2}>
             <Text fontSize="sm">{name}</Text>
             <Text fontSize="xs" color="gray.500">
